@@ -11,7 +11,9 @@ Two distinct results were separated rather than blended into one claim:
 2. **Causal distillation — local candidate ready.** The same construction is used only to create cleaner historical
    labels. Inference uses current and past feature rows, and five dates are purged at every training boundary.
 
-No external submission was executed for either route.
+The noncausal route was never submitted. The causal member and one predeclared
+guarded blend probe were submitted later; their actual outcomes are recorded
+below rather than retroactively folded into the local selection evidence.
 
 ## Exact target diagnosis
 
@@ -73,7 +75,7 @@ The predeclared gate required every fold above `0.089416` and at least `+0.01` m
 - Training label dates: `0-1696`; latest source feature date: `1701`; first test date: `1702`
 - Audit: exact columns, IDs, keys, row count, uniqueness, numeric/finite/nonconstant predictions, one ZIP member,
   and passing ZIP CRC
-- External submission: **not executed**
+- External submission: ref `54616087`, public `0.08961`
 
 Prepared command, intentionally not run:
 
@@ -113,5 +115,10 @@ The predeclared mean and worst-fold gates passed by `+0.013518` and `+0.015648`.
 The resulting local ZIP is
 `artifacts/submissions/stocks_v2_v1_distilled_blend_submission.zip`, SHA-256
 `5899f77306d59f969b754a70271e1a1c54b9ac3bf2459c167100d84c9d0bee13`.
-It has not been submitted. Recommendation: use at most one remaining slot for
-this probe and stop the lane if it does not beat v1.
+The single guarded probe was submitted as ref `54616763` and scored `0.09064`,
+beating v1's `0.09057` by only `0.00007`. That clears the literal stop rule but
+is too small to justify another leaderboard-guided extrapolation. The lane is
+stopped for today with four of five daily slots used and one preserved.
+
+Transaction receipt:
+`artifacts/receipts/stocks_v2_blend_submission_transaction.json`.

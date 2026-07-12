@@ -1,6 +1,6 @@
 {
   "schema_version": "stocks-v2-kaggle-submissions-v1",
-  "captured_at": "2026-07-12T13:11:12-04:00",
+  "captured_at": "2026-07-12T13:15:00-04:00",
   "competition": "stocks-return-prediction-v-2",
   "submission_limit_per_day": 5,
   "submissions": [
@@ -34,7 +34,21 @@
       "candidate_sha256": "7631c79b81f7926d803aa80dc4fc8da2a6ea27f562701e48e397dbe57069e215",
       "oof_mean_daily_rank_ic": 0.10307493682960286,
       "evidence_role": "strictly causal purged target-distillation model; zero future test rows"
+    },
+    {
+      "ref": 54616763,
+      "file_name": "stocks_v2_v1_distilled_blend_submission.zip",
+      "submitted_at_utc": "2026-07-12T17:14:13.790000",
+      "description": "90% causal distilled + 10% v1; sealed aligned OOF gate",
+      "status": "COMPLETE",
+      "public_score": 0.09064,
+      "candidate_sha256": "5899f77306d59f969b754a70271e1a1c54b9ac3bf2459c167100d84c9d0bee13",
+      "oof_fold_scores": [0.10873133866674539, 0.09829991267866246],
+      "evidence_role": "one guarded probe selected on fold 1 and confirmed on sealed fold 2"
     }
   ],
+  "daily_slots_used": 4,
+  "daily_slots_preserved": 1,
+  "stop_decision": "Blend improved public score by only 0.00007 over v1; preserve the final daily slot rather than extrapolate from leaderboard noise.",
   "private_scores_available": false
 }

@@ -1,0 +1,33 @@
+{
+  "schema_version": "stocks-v2-submission-transaction-v1",
+  "competition": "stocks-return-prediction-v-2",
+  "candidate": {
+    "path": "artifacts/submissions/stocks_v2_v1_distilled_blend_submission.zip",
+    "sha256": "5899f77306d59f969b754a70271e1a1c54b9ac3bf2459c167100d84c9d0bee13",
+    "weight_v1": 0.1,
+    "weight_causal_distilled": 0.9,
+    "selection_receipt": "artifacts/receipts/stocks_v2_aligned_blend_court.json"
+  },
+  "transaction": {
+    "ref": 54616763,
+    "submitted_at_utc": "2026-07-12T17:14:13.790000",
+    "description": "90% causal distilled + 10% v1; sealed aligned OOF gate",
+    "status": "COMPLETE",
+    "public_score": 0.09064,
+    "private_score": null
+  },
+  "comparison": {
+    "v1_ref": 54615059,
+    "v1_public_score": 0.09057,
+    "causal_distilled_ref": 54616087,
+    "causal_distilled_public_score": 0.08961,
+    "absolute_gain_over_v1": 0.00007
+  },
+  "decision": {
+    "daily_slots_used": 4,
+    "daily_limit": 5,
+    "stop_today": true,
+    "reason": "The guarded blend beat v1, but the 0.00007 public gain is too small to justify a fifth leaderboard-guided extrapolation. Preserve one slot."
+  },
+  "truth_boundary": "This is a public leaderboard transaction, not a private-score or final-rank result. The noncausal future-row diagnostic was never submitted."
+}

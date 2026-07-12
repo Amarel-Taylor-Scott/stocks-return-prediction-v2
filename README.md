@@ -81,10 +81,12 @@ The leakage-safe distillation uses that construction only for historical
 labels, purges the full five-date horizon, and predicts from same-date/past
 features. Its strict folds scored `0.108384` and `0.097766` (mean `0.103075`),
 versus v1 OOF `0.089416`. The final local ZIP passed every schema and archive
-check; no submission was executed. See `SECOND_GENERATION_AUDIT.md` and
+check; it was submitted once as a guarded diagnostic. See `SECOND_GENERATION_AUDIT.md` and
 `artifacts/receipts/stocks_v2_causal_distilled_final.json`.
 
 The causal distilled submission later scored `0.08961` public versus v1
 `0.09057`. An aligned, fold-1-selected / fold-2-sealed court promoted a guarded
-`90%` distilled + `10%` v1 blend locally; it remains unsubmitted. See the audit
-for the transfer diagnosis and stop rule.
+`90%` distilled + `10%` v1 blend. Its one guarded submission scored `0.09064`,
+a real but tiny `+0.00007` over v1. Four of five daily slots were used; the last
+slot was deliberately preserved. See the audit and submission transaction for
+the transfer diagnosis and stop rule.
