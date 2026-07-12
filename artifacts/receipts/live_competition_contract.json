@@ -1,0 +1,50 @@
+{
+  "captured_at_utc": "2026-07-12T16:17:19Z",
+  "competition": "stocks-return-prediction-v-2",
+  "competition_url": "https://www.kaggle.com/competitions/stocks-return-prediction-v-2",
+  "source": "Kaggle CLI 2.2.3 authenticated API",
+  "account": {
+    "entered": true,
+    "submissions_before_this_work": 0
+  },
+  "listing": {
+    "category": "Community",
+    "deadline_utc": "2026-07-15T16:00:00Z",
+    "reward": "Kudos",
+    "team_count": 101
+  },
+  "files": [
+    {
+      "name": "sample_submission.csv",
+      "bytes": 194964340,
+      "creation_date": "2025-07-20T06:16:59.051000"
+    },
+    {
+      "name": "test_data.pkl",
+      "bytes": 336012449,
+      "creation_date": "2025-07-20T06:16:59.487000"
+    },
+    {
+      "name": "train_data.pkl",
+      "bytes": 344588589,
+      "creation_date": "2025-07-20T06:16:59.080000"
+    }
+  ],
+  "official_pages": {
+    "data_description": "train_data.pkl has code, date, f_0 through f_6, and y; test_data.pkl omits y; sample_submission.csv has id, code, date, y_pred",
+    "evaluation": "IC = sum over dates of Corr(rank(y_hat_t), rank(y_t)) divided by T",
+    "specific_rules": [
+      "Don't cheat!",
+      "Apply yourself!",
+      "Have fun!"
+    ],
+    "eligibility": "Kaggle foundational rules only; registered account, age-of-majority/export-control conditions, one account/team, and no private sharing outside the team"
+  },
+  "commands": [
+    "kaggle competitions list --search stocks-return-prediction-v-2 --csv",
+    "kaggle competitions files -c stocks-return-prediction-v-2 --csv",
+    "kaggle competitions pages stocks-return-prediction-v-2 --content --format json",
+    "kaggle competitions submissions -c stocks-return-prediction-v-2 --csv"
+  ],
+  "external_submission_executed": false
+}

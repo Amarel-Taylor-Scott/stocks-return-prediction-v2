@@ -1,0 +1,8 @@
+{
+  "competition": "stocks-return-prediction-v-2",
+  "external_submission_executed": false,
+  "host_reference_command": "kaggle competitions submit -c stocks-return-prediction-v-2 -f data/raw/sample_submission.csv -m \"official host reference diagnostic; unchanged file\"",
+  "model_command": "kaggle competitions submit -c stocks-return-prediction-v-2 -f artifacts/submissions/stocks_v2_model_blend_submission.zip -m \"expanding-time CV rank blend v1\"",
+  "model_zip_sha256": "da532638f8de48ae24a5d5d45a386621d1f617c614f17c6f63772cdf8184a56a",
+  "receipt": "artifacts/receipts/stocks_v2_run.json"
+}

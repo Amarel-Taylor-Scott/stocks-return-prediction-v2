@@ -1,0 +1,7 @@
+data/raw/
+artifacts/submissions/*.csv
+artifacts/submissions/*.zip
+artifacts/features/
+__pycache__/
+.pytest_cache/
+

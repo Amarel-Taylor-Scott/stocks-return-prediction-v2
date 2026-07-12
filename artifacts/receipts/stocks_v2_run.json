@@ -1,0 +1,495 @@
+{
+  "competition": "stocks-return-prediction-v-2",
+  "created_at_utc": "2026-07-12T16:16:39.665160+00:00",
+  "data_contract": {
+    "overlapping_codes": 3688,
+    "sample_shape": [
+      4879631,
+      4
+    ],
+    "test_codes": 5214,
+    "test_dates": [
+      1702,
+      2803
+    ],
+    "test_shape": [
+      4879631,
+      9
+    ],
+    "train_codes": 3761,
+    "train_dates": [
+      0,
+      1701
+    ],
+    "train_shape": [
+      4670279,
+      10
+    ],
+    "train_test_dates_strictly_separated": true
+  },
+  "deadline_utc": "2026-07-15T16:00:00+00:00",
+  "environment": {
+    "lightgbm": "4.6.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "platform": "Linux-7.0.0-22-generic-x86_64-with-glibc2.43",
+    "python": "3.11.15 (main, May 10 2026, 19:28:18) [Clang 22.1.3 ]",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.17.1",
+    "seed": 20260712
+  },
+  "external_submission_executed": false,
+  "feature_count": 32,
+  "features": [
+    "raw_f_0",
+    "raw_f_1",
+    "raw_f_2",
+    "raw_f_3",
+    "raw_f_4",
+    "raw_f_5",
+    "raw_f_6",
+    "cs_rank_f_0",
+    "cs_rank_f_1",
+    "cs_rank_f_2",
+    "cs_rank_f_3",
+    "cs_rank_f_4",
+    "cs_rank_f_5",
+    "cs_rank_f_6",
+    "date_scaled",
+    "cs_rank_f_0_lag1",
+    "cs_rank_f_0_lag5",
+    "cs_rank_f_0_diff1",
+    "cs_rank_f_1_lag1",
+    "cs_rank_f_1_lag5",
+    "cs_rank_f_1_diff1",
+    "cs_rank_f_2_lag1",
+    "cs_rank_f_2_lag5",
+    "cs_rank_f_2_diff1",
+    "cs_rank_f_5_lag1",
+    "cs_rank_f_5_lag5",
+    "cs_rank_f_5_diff1",
+    "cs_rank_f_6_lag1",
+    "cs_rank_f_6_lag5",
+    "cs_rank_f_6_diff1",
+    "past_code_target_prior",
+    "past_code_observation_coverage"
+  ],
+  "final_fit": {
+    "iterations": 75,
+    "test_prior_count_percentiles": {
+      "0.0": 0.0,
+      "0.25": 287.0,
+      "0.5": 1250.0,
+      "0.75": 1611.0,
+      "1.0": 1702.0
+    },
+    "test_prior_known_code_fraction": 0.7956220460112661
+  },
+  "folds": [
+    {
+      "best_iteration": 54,
+      "fold": {
+        "name": "expanding_1200_to_1450",
+        "train_end": 1200,
+        "valid_end": 1450,
+        "valid_start": 1201
+      },
+      "metrics": {
+        "lightgbm": {
+          "dates": 250,
+          "max": 0.2766147084419866,
+          "mean": 0.08034084001735643,
+          "median": 0.09425511379027696,
+          "min": -0.13778569477156724,
+          "rows": 819491,
+          "std": 0.08454344598959766
+        },
+        "prior": {
+          "dates": 250,
+          "max": 0.243162861831697,
+          "mean": 0.001099366251213126,
+          "median": 0.0026436047318507904,
+          "min": -0.24189533583625072,
+          "rows": 819491,
+          "std": 0.08293577030340912
+        },
+        "ridge": {
+          "dates": 250,
+          "max": 0.34385581523207015,
+          "mean": 0.07348743284125936,
+          "median": 0.06742472122306724,
+          "min": -0.1965542630556223,
+          "rows": 819491,
+          "std": 0.10410528709018631
+        }
+      },
+      "prediction_rank_ic_correlations": {
+        "prior_lightgbm": 0.4869114700067358,
+        "prior_ridge": 0.2207986928363654,
+        "ridge_lightgbm": 0.6324425703570017
+      },
+      "strict_temporal_order": true,
+      "train_date_range": [
+        0,
+        1200
+      ],
+      "train_rows": 2970516,
+      "valid_date_range": [
+        1201,
+        1450
+      ],
+      "valid_rows": 819491
+    },
+    {
+      "best_iteration": 96,
+      "fold": {
+        "name": "expanding_1450_to_1701",
+        "train_end": 1450,
+        "valid_end": 1701,
+        "valid_start": 1451
+      },
+      "metrics": {
+        "lightgbm": {
+          "dates": 251,
+          "max": 0.36706781939867644,
+          "mean": 0.09784578032770856,
+          "median": 0.1081625018755064,
+          "min": -0.17171388227404286,
+          "rows": 880272,
+          "std": 0.10312424712818383
+        },
+        "prior": {
+          "dates": 251,
+          "max": 0.2445137234472198,
+          "mean": 0.019130932260608968,
+          "median": 0.024790423382263272,
+          "min": -0.2079775081222755,
+          "rows": 880272,
+          "std": 0.0771281468093977
+        },
+        "ridge": {
+          "dates": 251,
+          "max": 0.3755388596469139,
+          "mean": 0.07932248195816624,
+          "median": 0.08831372429273587,
+          "min": -0.1969999595463129,
+          "rows": 880272,
+          "std": 0.11226832272960907
+        }
+      },
+      "prediction_rank_ic_correlations": {
+        "prior_lightgbm": 0.07776323076392185,
+        "prior_ridge": 0.17470632065719957,
+        "ridge_lightgbm": 0.8723065084328837
+      },
+      "strict_temporal_order": true,
+      "train_date_range": [
+        0,
+        1450
+      ],
+      "train_rows": 3790007,
+      "valid_date_range": [
+        1451,
+        1701
+      ],
+      "valid_rows": 880272
+    }
+  ],
+  "host_reference": {
+    "nonconstant": true,
+    "source": "official sample_submission.csv",
+    "summary": {
+      "25%": -0.4679288923690508,
+      "50%": -0.0854284084737017,
+      "75%": 0.3328187065918734,
+      "count": 4879631.0,
+      "max": 25.081964232457896,
+      "mean": -0.005567655900039431,
+      "min": -10.588292379641748,
+      "std": 0.9311790414893001
+    },
+    "treated_as_model_evidence": false,
+    "warning": "Unscored official-file baseline; leaderboard implications are inference, not proof."
+  },
+  "host_reference_audit": {
+    "checks": {
+      "columns_exact": true,
+      "ids_exact": true,
+      "ids_unique": true,
+      "keys_exact": true,
+      "keys_unique": true,
+      "prediction_finite": true,
+      "prediction_nonconstant": true,
+      "prediction_numeric": true,
+      "row_count_exact": true
+    },
+    "prediction_summary": {
+      "25%": -0.4679288923690508,
+      "50%": -0.0854284084737017,
+      "75%": 0.3328187065918734,
+      "count": 4879631.0,
+      "max": 25.081964232457896,
+      "mean": -0.005567655900039431,
+      "min": -10.588292379641748,
+      "std": 0.9311790414893001
+    }
+  },
+  "input_receipt": {
+    "sample": {
+      "bytes": 194964340,
+      "path": "data/raw/sample_submission.csv",
+      "sha256": "67056bf2b18bc9a654a671f4e3b8f4ad912afeea6d89da46623aa036e5edf056"
+    },
+    "test": {
+      "bytes": 336012449,
+      "path": "data/raw/test_data.pkl",
+      "sha256": "03b67d5faf38945d74b97c66b8b447dcd2b122b201dcd67f757f2c5e2f45ce80"
+    },
+    "train": {
+      "bytes": 344588589,
+      "path": "data/raw/train_data.pkl",
+      "sha256": "2c3b49c3ef9b501dea8345e7c34fbc2a3eb8384964432734105d6fb53750fb6d"
+    }
+  },
+  "metric_contract": {
+    "direction": "maximize",
+    "implementation": "mean across dates of Spearman rank correlation",
+    "name": "mean daily Rank IC"
+  },
+  "oof": {
+    "dates": 501,
+    "rows": 1699763,
+    "selected_blend_metric": {
+      "dates": 501,
+      "max": 0.3765080673563382,
+      "mean": 0.0894160876163553,
+      "median": 0.09555644074429129,
+      "min": -0.17965189884939767,
+      "rows": 1699763,
+      "std": 0.0977821125119098
+    },
+    "selected_blend_weights": {
+      "lightgbm": 0.8,
+      "prior": 0.0,
+      "ridge": 0.2
+    },
+    "top_10_blends": [
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.3765080673563382,
+          "mean": 0.0894160876163553,
+          "median": 0.09555644074429129,
+          "min": -0.17965189884939767,
+          "rows": 1699763,
+          "std": 0.0977821125119098
+        },
+        "weights": {
+          "lightgbm": 0.8,
+          "prior": 0.0,
+          "ridge": 0.2
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.37227895662655636,
+          "mean": 0.08941365040515466,
+          "median": 0.09788678594669391,
+          "min": -0.17588834403339476,
+          "rows": 1699763,
+          "std": 0.09619794680540465
+        },
+        "weights": {
+          "lightgbm": 0.9,
+          "prior": 0.0,
+          "ridge": 0.1
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.36706781939867644,
+          "mean": 0.08911078017284221,
+          "median": 0.09815245573609356,
+          "min": -0.17171388227404286,
+          "rows": 1699763,
+          "std": 0.09471635438173136
+        },
+        "weights": {
+          "lightgbm": 1.0,
+          "prior": 0.0,
+          "ridge": 0.0
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.37995332362794726,
+          "mean": 0.08909000267628878,
+          "median": 0.09470296704070508,
+          "min": -0.18312059767130967,
+          "rows": 1699763,
+          "std": 0.0994708366671147
+        },
+        "weights": {
+          "lightgbm": 0.7,
+          "prior": 0.0,
+          "ridge": 0.3
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.3823698845026848,
+          "mean": 0.08838477397035557,
+          "median": 0.09482392898544491,
+          "min": -0.18610519990547061,
+          "rows": 1699763,
+          "std": 0.10123045094013575
+        },
+        "weights": {
+          "lightgbm": 0.6,
+          "prior": 0.0,
+          "ridge": 0.4
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.3720810820115884,
+          "mean": 0.08742112802515084,
+          "median": 0.0941511820623887,
+          "min": -0.17333803047004445,
+          "rows": 1699763,
+          "std": 0.09503608118819365
+        },
+        "weights": {
+          "lightgbm": 0.8,
+          "prior": 0.1,
+          "ridge": 0.1
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.3762245835552477,
+          "mean": 0.08730141501343874,
+          "median": 0.09481693950024402,
+          "min": -0.17415051200504142,
+          "rows": 1699763,
+          "std": 0.0964592960030721
+        },
+        "weights": {
+          "lightgbm": 0.7,
+          "prior": 0.1,
+          "ridge": 0.2
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.3835842298241539,
+          "mean": 0.08727558622099374,
+          "median": 0.09462414187439643,
+          "min": -0.1888735666104447,
+          "rows": 1699763,
+          "std": 0.10297910065460283
+        },
+        "weights": {
+          "lightgbm": 0.5,
+          "prior": 0.0,
+          "ridge": 0.5
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.3670575742018773,
+          "mean": 0.0871755419955452,
+          "median": 0.0951001032251193,
+          "min": -0.171876647786725,
+          "rows": 1699763,
+          "std": 0.09372276728177968
+        },
+        "weights": {
+          "lightgbm": 0.9,
+          "prior": 0.1,
+          "ridge": 0.0
+        }
+      },
+      {
+        "metric": {
+          "dates": 501,
+          "max": 0.3789619236972532,
+          "mean": 0.08677451630906617,
+          "median": 0.091266971220276,
+          "min": -0.17681972757118625,
+          "rows": 1699763,
+          "std": 0.09797738116583815
+        },
+        "weights": {
+          "lightgbm": 0.6,
+          "prior": 0.1,
+          "ridge": 0.3
+        }
+      }
+    ]
+  },
+  "recommended_probe_order": [
+    {
+      "artifact": "data/raw/sample_submission.csv",
+      "kind": "official host reference",
+      "reason": "Nonconstant official predictions and near-perfect leaderboard entries make this the cheapest diagnostic probe; score is unverified."
+    },
+    {
+      "artifact": "artifacts/submissions/stocks_v2_model_blend_submission.zip",
+      "kind": "leakage-safe trained blend",
+      "reason": "Independent model candidate with expanding-date OOF evidence."
+    }
+  ],
+  "runtime_seconds": 551.3734040879644,
+  "schema_version": "stocks-v2-run-receipt-v1",
+  "submission_artifact": {
+    "csv_bytes": 151049919,
+    "csv_path": "artifacts/submissions/stocks_v2_model_blend_submission.csv",
+    "csv_removed_after_verified_zip": true,
+    "csv_sha256": "e88260397eae51d380da55a2fc4543c9e2fa3734e5369ab7800d00417c5617ce",
+    "zip_bytes": 49320067,
+    "zip_crc_ok": true,
+    "zip_members": [
+      "submission.csv"
+    ],
+    "zip_path": "artifacts/submissions/stocks_v2_model_blend_submission.zip",
+    "zip_sha256": "da532638f8de48ae24a5d5d45a386621d1f617c614f17c6f63772cdf8184a56a"
+  },
+  "submission_audit": {
+    "checks": {
+      "columns_exact": true,
+      "ids_exact": true,
+      "ids_unique": true,
+      "keys_exact": true,
+      "keys_unique": true,
+      "prediction_finite": true,
+      "prediction_nonconstant": true,
+      "prediction_numeric": true,
+      "row_count_exact": true
+    },
+    "prediction_summary": {
+      "25%": -0.24988804757595062,
+      "50%": 0.00011059499956900254,
+      "75%": 0.25011155009269714,
+      "count": 4879631.0,
+      "max": 0.5,
+      "mean": 0.000112918671220541,
+      "min": -0.49980154633522034,
+      "std": 0.2886751592159271
+    }
+  },
+  "validation_contract": {
+    "feature_lags": "current or previous feature rows only; no target lags",
+    "same_date_cross_sectional_features": true,
+    "target_encoding": "past-only expanding train prior and fold-frozen validation prior",
+    "type": "expanding temporal holdout"
+  }
+}
