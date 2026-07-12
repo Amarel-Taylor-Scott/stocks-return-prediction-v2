@@ -83,3 +83,8 @@ features. Its strict folds scored `0.108384` and `0.097766` (mean `0.103075`),
 versus v1 OOF `0.089416`. The final local ZIP passed every schema and archive
 check; no submission was executed. See `SECOND_GENERATION_AUDIT.md` and
 `artifacts/receipts/stocks_v2_causal_distilled_final.json`.
+
+The causal distilled submission later scored `0.08961` public versus v1
+`0.09057`. An aligned, fold-1-selected / fold-2-sealed court promoted a guarded
+`90%` distilled + `10%` v1 blend locally; it remains unsubmitted. See the audit
+for the transfer diagnosis and stop rule.

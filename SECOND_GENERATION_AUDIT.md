@@ -88,3 +88,30 @@ Receipts:
 - `artifacts/receipts/stocks_v2_causal_distilled_final.json`
 
 Reproduction tests: `python3 -m pytest -q tests/test_pipeline.py tests/test_formula_candidate.py` (`9 passed`).
+
+## Public transfer diagnosis
+
+Submission `54616087` completed at `0.08961`, below v1's `0.09057`. The distilled
+OOF-to-public gap was `-0.013465`, while v1 transferred almost exactly. Artifact
+integrity was not the issue: schema, keys, ranks, hash, and ZIP CRC all remained
+valid. The evidence points to historical-world selection/shift: distilled labels
+made the purged historical folds easier but did not improve the hidden test regime.
+
+The two test predictions are related but not redundant: mean daily rank
+correlation `0.84839`, sign disagreement `16.14%`, top-10% overlap `46.78%`, and
+top-1% overlap `15.24%`.
+
+One aligned OOF court therefore selected blend weight using fold 1 only and
+opened fold 2 afterward. The selected `90%` distilled / `10%` v1 blend improved:
+
+| | Fold 1 | Sealed fold 2 |
+|---|---:|---:|
+| v1 | 0.082652 | 0.097344 |
+| guarded blend | **0.108731** | **0.098300** |
+
+The predeclared mean and worst-fold gates passed by `+0.013518` and `+0.015648`.
+The resulting local ZIP is
+`artifacts/submissions/stocks_v2_v1_distilled_blend_submission.zip`, SHA-256
+`5899f77306d59f969b754a70271e1a1c54b9ac3bf2459c167100d84c9d0bee13`.
+It has not been submitted. Recommendation: use at most one remaining slot for
+this probe and stop the lane if it does not beat v1.

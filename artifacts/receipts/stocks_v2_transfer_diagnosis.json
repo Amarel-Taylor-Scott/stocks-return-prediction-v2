@@ -1,0 +1,45 @@
+{
+  "schema_version": "stocks-v2-transfer-diagnosis-v1",
+  "captured_at_utc": "2026-07-12T17:11:12Z",
+  "competition": "stocks-return-prediction-v-2",
+  "external_submission_executed_by_this_diagnosis": false,
+  "actual_submissions": {
+    "v1": {"ref": 54615059, "public_score": 0.09057, "sha256": "da532638f8de48ae24a5d5d45a386621d1f617c614f17c6f63772cdf8184a56a"},
+    "causal_distilled": {"ref": 54616087, "public_score": 0.08961, "sha256": "7631c79b81f7926d803aa80dc4fc8da2a6ea27f562701e48e397dbe57069e215"}
+  },
+  "transfer_gap": {
+    "causal_distilled_purged_oof": 0.10307493049235045,
+    "causal_distilled_public": 0.08961,
+    "absolute_gap": -0.013464930492350451,
+    "v1_oof": 0.0894160876163553,
+    "v1_public": 0.09057,
+    "interpretation": "Distillation improved the historical purged worlds but did not transfer to the hidden public period; v1 was better calibrated to the test regime. The failure is selection/shift, not submission corruption."
+  },
+  "test_prediction_geometry": {
+    "rows": 4879631,
+    "dates": 1102,
+    "global_rank_correlation": 0.8395380189865909,
+    "mean_daily_rank_correlation": 0.8483892108297801,
+    "daily_rank_correlation_std": 0.07461387453167767,
+    "daily_rank_correlation_min": 0.30663540172096637,
+    "daily_rank_correlation_median": 0.8714293970815399,
+    "mean_absolute_rank_difference": 0.11650045961141586,
+    "rank_rmse": 0.16353489458560944,
+    "sign_disagreement_fraction": 0.16141527914713225,
+    "top_10_percent_overlap": 0.46776193239148023,
+    "top_1_percent_overlap": 0.15239957702578477,
+    "date_bin_rank_correlations": [0.8417716520008166, 0.838816542244257, 0.8386731789576749, 0.840108696287447]
+  },
+  "aligned_oof_court": {
+    "receipt": "artifacts/receipts/stocks_v2_aligned_blend_court.json",
+    "selection": "weight selected on fold 1 only; fold 2 sealed",
+    "selected_weights": {"v1": 0.1, "causal_distilled": 0.9},
+    "v1_fold_scores": [0.08265161383601341, 0.09734423494309587],
+    "blend_fold_scores": [0.10873133866674539, 0.09829991267866246],
+    "mean_margin": 0.013517701283149275,
+    "worst_fold_margin": 0.015648298842649053,
+    "gate_passed": true
+  },
+  "decision": "RECOMMEND_ONE_BLEND_PROBE_NO_AUTOMATIC_SUBMIT",
+  "remaining_daily_slots_before_probe": 2
+}

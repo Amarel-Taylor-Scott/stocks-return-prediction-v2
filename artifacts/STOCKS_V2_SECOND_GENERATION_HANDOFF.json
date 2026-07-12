@@ -1,9 +1,14 @@
 {
   "competition": "stocks-return-prediction-v-2",
   "candidate": "causal distilled +2..+5 historical target",
-  "decision": "LOCAL_CANDIDATE_READY_NO_EXTERNAL_SUBMIT",
-  "external_submission_executed": false,
-  "daily_slots_consumed_by_this_work": 0,
+  "decision": "CAUSAL_DISTILLED_SCORED_BELOW_V1_BLEND_PROBE_READY",
+  "external_submission_executed": true,
+  "daily_slots_consumed_by_this_work": 1,
+  "leaderboard": {
+    "ref": 54616087,
+    "public_score": 0.08961,
+    "v1_public_score": 0.09057
+  },
   "oof": {
     "fold_scores": [
       0.10838359361513913,
@@ -16,8 +21,17 @@
   "artifact": "artifacts/submissions/stocks_v2_causal_distilled_submission.zip",
   "artifact_sha256": "7631c79b81f7926d803aa80dc4fc8da2a6ea27f562701e48e397dbe57069e215",
   "receipt": "artifacts/receipts/stocks_v2_causal_distilled_final.json",
-  "receipt_sha256": "d413f5c488198a57cf5ad9fc9db291b2e444b8bf6f98cb8ec4268bc3a195f86e",
+  "receipt_sha256": "9304b2a1104a2d7f006e0f8250b565318fc6615f716a92171565da317867a3fe",
   "message": "causal distilled +2..+5 target; purged future-date CV 0.103075",
   "submit_command_not_executed": "kaggle competitions submit -c stocks-return-prediction-v-2 -f artifacts/submissions/stocks_v2_causal_distilled_submission.zip -m \"causal distilled +2..+5 target; purged future-date CV 0.103075\"",
-  "prohibited_artifact": "future-row exact formula diagnostic; deleted and must not be submitted"
+  "prohibited_artifact": "future-row exact formula diagnostic; deleted and must not be submitted",
+  "next_probe": {
+    "recommendation": "submit one guarded v1+distilled blend probe; stop if it does not beat v1",
+    "weights": {"v1": 0.1, "causal_distilled": 0.9},
+    "artifact": "artifacts/submissions/stocks_v2_v1_distilled_blend_submission.zip",
+    "artifact_sha256": "5899f77306d59f969b754a70271e1a1c54b9ac3bf2459c167100d84c9d0bee13",
+    "receipt": "artifacts/receipts/stocks_v2_aligned_blend_court.json",
+    "receipt_sha256": "755bf03cb72524e695243f3c126a4a7aa113f8e7c39b6bd146c736ad8fd82f12",
+    "submit_command_not_executed": "kaggle competitions submit -c stocks-return-prediction-v-2 -f artifacts/submissions/stocks_v2_v1_distilled_blend_submission.zip -m \"90% causal distilled + 10% v1; sealed aligned OOF gate\""
+  }
 }
