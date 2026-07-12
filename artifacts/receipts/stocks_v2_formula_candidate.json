@@ -1,0 +1,244 @@
+{
+  "competition": "stocks-return-prediction-v-2",
+  "created_at_utc": "2026-07-12T16:34:43.478621+00:00",
+  "decision": "DIAGNOSTIC_ONLY_DO_NOT_SUBMIT",
+  "environment": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "platform": "Linux-7.0.0-22-generic-x86_64-with-glibc2.43",
+    "python": "3.11.15 (main, May 10 2026, 19:28:18) [Clang 22.1.3 ]"
+  },
+  "external_submission_executed": false,
+  "diagnostic_zip_removed_after_parent_do_not_submit_decision": true,
+  "fallback": {
+    "finite": true,
+    "path": "artifacts/submissions/stocks_v2_model_blend_submission.zip",
+    "rows": 4879631,
+    "sha256": "da532638f8de48ae24a5d5d45a386621d1f617c614f17c6f63772cdf8184a56a",
+    "source_evidence": "v1 expanding-date OOF 0.089416; public 0.09057"
+  },
+  "rules_boundary": {
+    "official_description": "Use the training set to train your model and predict with the features data in the test set.",
+    "official_specific_rule": "Don't cheat!",
+    "required_before_submission": "parent approval plus human/organizer determination that cross-date test-feature use is intended",
+    "parent_decision": "do not submit the future-row formula; retain only as target-construction diagnostic",
+    "risk": "Formula consumes later test feature dates. They are present in the static test file, but this is non-causal in a live forecast interpretation.",
+    "sequential_serving_constraint_stated": false
+  },
+  "runtime_seconds": 49.002944845939055,
+  "schema_version": "stocks-v2-formula-candidate-v1",
+  "submission_artifact": {
+    "csv_bytes": 151047974,
+    "csv_path": "artifacts/submissions/stocks_v2_exact_future_formula_submission.csv",
+    "csv_removed_after_verified_zip": true,
+    "csv_sha256": "4e3a8c41f13f6cee91938ce6f81ec2d7188e4cf9b851a053c6a04279be63ad87",
+    "zip_bytes": 49465722,
+    "zip_crc_ok": true,
+    "zip_members": [
+      "submission.csv"
+    ],
+    "zip_path": "artifacts/submissions/stocks_v2_exact_future_formula_submission.zip",
+    "zip_sha256": "06f7677150ea2e9fc1097394a920eeff15f897b09ee9cf97771378deec272bb9"
+  },
+  "submission_audit": {
+    "checks": {
+      "columns_exact": true,
+      "ids_exact": true,
+      "ids_unique": true,
+      "keys_exact": true,
+      "keys_unique": true,
+      "prediction_finite": true,
+      "prediction_nonconstant": true,
+      "prediction_numeric": true,
+      "row_count_exact": true
+    },
+    "prediction_summary": {
+      "25%": -0.24989279359579086,
+      "50%": 0.00011049723980249837,
+      "75%": 0.25011076033115387,
+      "count": 4879631.0,
+      "max": 0.5,
+      "mean": 0.00011291835835436359,
+      "min": -0.49980154633522034,
+      "std": 0.28867512941360474
+    }
+  },
+  "test_prediction": {
+    "complete_row_fraction": 0.9935292238286051,
+    "formula_date_range": [
+      1702,
+      2798
+    ],
+    "formula_dates": 1097,
+    "per_date_complete_fraction": {
+      "max": 1.0,
+      "median_on_formula_dates": 0.9990530303030303,
+      "min_on_formula_dates": 0.9800328227571116
+    },
+    "tail_fallback_dates": [
+      2799,
+      2800,
+      2801,
+      2802,
+      2803
+    ],
+    "tail_fallback_rows": 25066
+  },
+  "validation": {
+    "folds": [
+      {
+        "all_rows_metric": {
+          "dates": 250,
+          "max": 0.9999968438045912,
+          "mean": 0.995822055043128,
+          "median": 0.9972679264155768,
+          "min": 0.9390843857790824,
+          "rows": 819491,
+          "std": 0.0060626920124763365
+        },
+        "complete_formula_fraction": 0.9936631396806066,
+        "complete_formula_rows_metric": {
+          "dates": 250,
+          "max": 0.9999999994780013,
+          "mean": 0.9999974370208038,
+          "median": 0.9999988784186327,
+          "min": 0.9999756667049919,
+          "rows": 814298,
+          "std": 3.7217740220283054e-06
+        },
+        "name": "future_1201_1450",
+        "placebos": {
+          "causal_mirror_exact_dates": {
+            "dates": 250,
+            "max": 0.354856415298239,
+            "mean": -0.006740299241503494,
+            "median": 0.006302531391176632,
+            "min": -0.34800932814933244,
+            "rows": 812711,
+            "std": 0.11874726219964607
+          },
+          "within_date_code_rotation": {
+            "dates": 250,
+            "max": 0.06605873925927219,
+            "mean": -0.0007426062409604704,
+            "median": -0.00044922857508364897,
+            "min": -0.041545063858126646,
+            "rows": 819491,
+            "std": 0.017409820263848838
+          },
+          "wrong_window_date_plus_1_to_4": {
+            "dates": 250,
+            "max": 0.8882578706242487,
+            "mean": 0.689208582301698,
+            "median": 0.6872692271708551,
+            "min": 0.4727312150653984,
+            "rows": 815229,
+            "std": 0.07400653447952986
+          },
+          "wrong_window_date_plus_3_to_6": {
+            "dates": 250,
+            "max": 0.885748192537549,
+            "mean": 0.6889037608703268,
+            "median": 0.686000825406097,
+            "min": 0.472608787291249,
+            "rows": 813426,
+            "std": 0.07423780962364751
+          }
+        },
+        "strict_future_date_order": true,
+        "train_label_dates_used_for_discovery_only": [
+          0,
+          1200
+        ],
+        "validation_dates": [
+          1201,
+          1450
+        ]
+      },
+      {
+        "all_rows_metric": {
+          "dates": 246,
+          "max": 0.9999999769995461,
+          "mean": 0.9974093887018658,
+          "median": 0.9985003096852425,
+          "min": 0.9501080371104281,
+          "rows": 862321,
+          "std": 0.005712593600141035
+        },
+        "complete_formula_fraction": 0.9974255526654228,
+        "complete_formula_rows_metric": {
+          "dates": 246,
+          "max": 0.9999999989877828,
+          "mean": 0.999996123150223,
+          "median": 0.9999985463128225,
+          "min": 0.9999617530922492,
+          "rows": 860101,
+          "std": 5.7127410886546145e-06
+        },
+        "name": "future_1451_1696",
+        "placebos": {
+          "causal_mirror_exact_dates": {
+            "dates": 246,
+            "max": 0.2553818935934587,
+            "mean": -0.026492535072300868,
+            "median": -0.020424731373768837,
+            "min": -0.45318274652205576,
+            "rows": 859495,
+            "std": 0.11086503932165179
+          },
+          "within_date_code_rotation": {
+            "dates": 246,
+            "max": 0.04153908428372076,
+            "mean": -0.0007846437196282808,
+            "median": -0.0002474426167315533,
+            "min": -0.05672287007362433,
+            "rows": 862321,
+            "std": 0.01684013810714848
+          },
+          "wrong_window_date_plus_1_to_4": {
+            "dates": 246,
+            "max": 0.850117134022792,
+            "mean": 0.6817396228436455,
+            "median": 0.6853977389879744,
+            "min": 0.46879297079852256,
+            "rows": 860416,
+            "std": 0.0668068233939916
+          },
+          "wrong_window_date_plus_3_to_6": {
+            "dates": 245,
+            "max": 0.8500770272541881,
+            "mean": 0.6814429076691635,
+            "median": 0.6854851757940749,
+            "min": 0.4684550713884121,
+            "rows": 856218,
+            "std": 0.06677238747129638
+          }
+        },
+        "strict_future_date_order": true,
+        "train_label_dates_used_for_discovery_only": [
+          0,
+          1450
+        ],
+        "validation_dates": [
+          1451,
+          1696
+        ]
+      }
+    ],
+    "formula": "sum(log(f_2[code,date+k])) for k in {2,3,4,5}; rank-equivalent to product",
+    "promotion": {
+      "baseline_oof": 0.0894160876163553,
+      "gate": {
+        "beats_all_placebos_by_0_25": true,
+        "each_fold_above_0_95": true,
+        "each_fold_beats_baseline_by_0_80": true
+      },
+      "minimum_formula_fold": 0.995822055043128,
+      "minimum_margin_over_baseline": 0.9064059674267727,
+      "minimum_margin_over_strongest_placebo": 0.30661347274143,
+      "passed": true,
+      "strongest_placebo": 0.689208582301698
+    },
+    "uses_target_at_inference": false
+  }
+}

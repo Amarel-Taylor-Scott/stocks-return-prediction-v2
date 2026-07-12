@@ -1,0 +1,23 @@
+{
+  "competition": "stocks-return-prediction-v-2",
+  "candidate": "causal distilled +2..+5 historical target",
+  "decision": "LOCAL_CANDIDATE_READY_NO_EXTERNAL_SUBMIT",
+  "external_submission_executed": false,
+  "daily_slots_consumed_by_this_work": 0,
+  "oof": {
+    "fold_scores": [
+      0.10838359361513913,
+      0.09776626736956176
+    ],
+    "mean": 0.10307493049235045,
+    "baseline": 0.0894160876163553,
+    "mean_margin": 0.013658842875995142
+  },
+  "artifact": "artifacts/submissions/stocks_v2_causal_distilled_submission.zip",
+  "artifact_sha256": "7631c79b81f7926d803aa80dc4fc8da2a6ea27f562701e48e397dbe57069e215",
+  "receipt": "artifacts/receipts/stocks_v2_causal_distilled_final.json",
+  "receipt_sha256": "d413f5c488198a57cf5ad9fc9db291b2e444b8bf6f98cb8ec4268bc3a195f86e",
+  "message": "causal distilled +2..+5 target; purged future-date CV 0.103075",
+  "submit_command_not_executed": "kaggle competitions submit -c stocks-return-prediction-v-2 -f artifacts/submissions/stocks_v2_causal_distilled_submission.zip -m \"causal distilled +2..+5 target; purged future-date CV 0.103075\"",
+  "prohibited_artifact": "future-row exact formula diagnostic; deleted and must not be submitted"
+}

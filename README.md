@@ -69,3 +69,17 @@ The selected 80% LightGBM / 20% Ridge blend reached **0.089416 mean daily Rank I
 - Account status at intake: entered, with no previous submissions
 
 Official URL: <https://www.kaggle.com/competitions/stocks-return-prediction-v-2>
+
+## Second generation — causal target distillation
+
+Train-only forensics identified the exact rank target construction as the `f_2`
+product at dates `t+2...t+5`. A static future-row version scores almost `1.0`,
+but is quarantined as diagnostic-only and must not be submitted because it is
+noncausal under a live-forecast interpretation.
+
+The leakage-safe distillation uses that construction only for historical
+labels, purges the full five-date horizon, and predicts from same-date/past
+features. Its strict folds scored `0.108384` and `0.097766` (mean `0.103075`),
+versus v1 OOF `0.089416`. The final local ZIP passed every schema and archive
+check; no submission was executed. See `SECOND_GENERATION_AUDIT.md` and
+`artifacts/receipts/stocks_v2_causal_distilled_final.json`.

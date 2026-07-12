@@ -1,0 +1,164 @@
+{
+  "competition": "stocks-return-prediction-v-2",
+  "created_at_utc": "2026-07-12T16:45:30.161398+00:00",
+  "decision": "PROMOTE_FOR_FINAL_FIT",
+  "environment": {
+    "lightgbm": "4.6.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "platform": "Linux-7.0.0-22-generic-x86_64-with-glibc2.43",
+    "python": "3.11.15 (main, May 10 2026, 19:28:18) [Clang 22.1.3 ]",
+    "seed": 20260712
+  },
+  "external_submission_executed": false,
+  "feature_count": 40,
+  "features": [
+    "raw_f_0",
+    "raw_f_1",
+    "raw_f_2",
+    "raw_f_3",
+    "raw_f_4",
+    "raw_f_5",
+    "raw_f_6",
+    "cs_rank_f_0",
+    "cs_rank_f_1",
+    "cs_rank_f_2",
+    "cs_rank_f_3",
+    "cs_rank_f_4",
+    "cs_rank_f_5",
+    "cs_rank_f_6",
+    "date_scaled",
+    "cs_rank_f_0_lag1",
+    "cs_rank_f_0_lag5",
+    "cs_rank_f_0_diff1",
+    "cs_rank_f_1_lag1",
+    "cs_rank_f_1_lag5",
+    "cs_rank_f_1_diff1",
+    "cs_rank_f_2_lag1",
+    "cs_rank_f_2_lag5",
+    "cs_rank_f_2_diff1",
+    "cs_rank_f_5_lag1",
+    "cs_rank_f_5_lag5",
+    "cs_rank_f_5_diff1",
+    "cs_rank_f_6_lag1",
+    "cs_rank_f_6_lag5",
+    "cs_rank_f_6_diff1",
+    "causal_log_f2_lag1",
+    "causal_log_f2_lag2",
+    "causal_log_f2_lag3",
+    "causal_log_f2_lag4",
+    "causal_log_f2_lag5",
+    "causal_log_f2_lag10",
+    "causal_log_f2_lag20",
+    "causal_log_f2_mean_lag1_5",
+    "causal_log_f2_trend1_5",
+    "causal_log_f2_trend5_20"
+  ],
+  "folds": [
+    {
+      "best_iteration": 152,
+      "distilled_formula_rank_ic": {
+        "dates": 250,
+        "max": 0.3466928580721779,
+        "mean": 0.10780550927111854,
+        "median": 0.11465002882129491,
+        "min": -0.15643477986403187,
+        "rows": 819491,
+        "std": 0.078536255977386
+      },
+      "fold": {
+        "name": "purged_1195_to_future_1201_1450",
+        "nominal_train_end": 1200,
+        "purged_label_end": 1195,
+        "valid_end": 1450,
+        "valid_start": 1201
+      },
+      "official_y_rank_ic": {
+        "dates": 250,
+        "max": 0.34784716255958265,
+        "mean": 0.10838359361513913,
+        "median": 0.11510792463085034,
+        "min": -0.1558459494956092,
+        "rows": 819491,
+        "std": 0.07835875236749862
+      },
+      "strict_future_date_order": true,
+      "train_date_range": [
+        0,
+        1195
+      ],
+      "train_rows": 2904326,
+      "training_label_latest_source_date": 1200,
+      "valid_rows": 819491,
+      "validation_date_range": [
+        1201,
+        1450
+      ]
+    },
+    {
+      "best_iteration": 80,
+      "distilled_formula_rank_ic": {
+        "dates": 246,
+        "max": 0.3657533226240554,
+        "mean": 0.09737619550335452,
+        "median": 0.10298953055962824,
+        "min": -0.16307838302248776,
+        "rows": 862321,
+        "std": 0.09986233965597437
+      },
+      "fold": {
+        "name": "purged_1445_to_future_1451_1696",
+        "nominal_train_end": 1450,
+        "purged_label_end": 1445,
+        "valid_end": 1696,
+        "valid_start": 1451
+      },
+      "official_y_rank_ic": {
+        "dates": 246,
+        "max": 0.3675272042055052,
+        "mean": 0.09776626736956176,
+        "median": 0.10333046272718427,
+        "min": -0.1658342562866734,
+        "rows": 862321,
+        "std": 0.10037108017764457
+      },
+      "strict_future_date_order": true,
+      "train_date_range": [
+        0,
+        1445
+      ],
+      "train_rows": 3717034,
+      "training_label_latest_source_date": 1450,
+      "valid_rows": 862321,
+      "validation_date_range": [
+        1451,
+        1696
+      ]
+    }
+  ],
+  "information_contract": {
+    "inference_features": "current-date and past feature rows only",
+    "target_formula": "historical label only: exact date+2..date+5 f_2 log-product",
+    "target_horizon_purge_dates": 5,
+    "test_future_rows_used": false,
+    "validation": "strict expanding future dates"
+  },
+  "input": {
+    "bytes": 344588589,
+    "path": "data/raw/train_data.pkl",
+    "sha256": "2c3b49c3ef9b501dea8345e7c34fbc2a3eb8384964432734105d6fb53750fb6d"
+  },
+  "prediction_artifact_built": false,
+  "promotion_gate": {
+    "baseline_oof": 0.0894160876163553,
+    "mean_fold_score": 0.10307493049235045,
+    "mean_margin": 0.013658842875995142,
+    "minimum_fold_score": 0.09776626736956176,
+    "minimum_margin": 0.008350179753206455,
+    "passed": true,
+    "requires_every_fold_above_baseline": true,
+    "requires_mean_margin_at_least_0_01": true
+  },
+  "runtime_seconds": 460.28347118897364,
+  "schema_version": "stocks-v2-causal-distilled-v1"
+}
