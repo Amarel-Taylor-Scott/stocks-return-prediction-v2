@@ -1,0 +1,29 @@
+{
+  "schema_version": "stocks-v2-kaggle-submissions-v1",
+  "captured_at": "2026-07-12T12:21:34-04:00",
+  "competition": "stocks-return-prediction-v-2",
+  "submission_limit_per_day": 5,
+  "submissions": [
+    {
+      "ref": 54614975,
+      "file_name": "sample_submission.csv",
+      "submitted_at_utc": "2026-07-12T16:18:28.027000",
+      "description": "official host reference diagnostic; unchanged file",
+      "status": "COMPLETE",
+      "public_score": -0.00028,
+      "evidence_role": "host reference falsifier; not model evidence"
+    },
+    {
+      "ref": 54615059,
+      "file_name": "stocks_v2_model_blend_submission.zip",
+      "submitted_at_utc": "2026-07-12T16:20:47.987000",
+      "description": "expanding-time CV rank blend v1",
+      "status": "COMPLETE",
+      "public_score": 0.09057,
+      "candidate_sha256": "da532638f8de48ae24a5d5d45a386621d1f617c614f17c6f63772cdf8184a56a",
+      "oof_mean_daily_rank_ic": 0.0894160876163553,
+      "evidence_role": "independently trained leakage-safe model blend"
+    }
+  ],
+  "private_scores_available": false
+}

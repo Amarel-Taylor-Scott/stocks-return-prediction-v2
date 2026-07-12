@@ -35,7 +35,9 @@ Fast synthetic verification:
 pytest -q
 ```
 
-The run writes an exact JSON receipt, an audited model submission ZIP, and a small submission-command handoff. It does not submit to Kaggle.
+The run writes an exact JSON receipt, an audited model submission ZIP, and a
+small submission-command handoff. The training script itself never submits to
+Kaggle; platform submissions are separate, explicit transactions.
 
 ## Verified run — 2026-07-12
 
@@ -51,7 +53,11 @@ The selected 80% LightGBM / 20% Ridge blend reached **0.089416 mean daily Rank I
 - Candidate SHA-256: `da532638f8de48ae24a5d5d45a386621d1f617c614f17c6f63772cdf8184a56a`
 - Exact receipt: `artifacts/receipts/stocks_v2_run.json`
 - Live contract: `artifacts/receipts/live_competition_contract.json`
-- External submissions executed by this pipeline: **none**
+- Official host-reference diagnostic: **−0.00028 public** (submission
+  `54614975`), falsifying the apparent sample-file shortcut.
+- Leakage-safe trained blend: **0.09057 public** (submission `54615059`), close
+  to its 0.089416 future-date OOF estimate.
+- Platform receipt: `artifacts/receipts/kaggle_submissions_2026-07-12.json`
 
 ## Live competition contract
 
